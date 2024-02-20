@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "AeonikTrail";
+  font-weight: 700;
+  src: url("./AeonikTRIAL-Bold.otf") format("opentype");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "AeonikTrail";
+  font-weight: 700;
+  font-style: italic;
+  src: url("./AeonikTRIAL-BoldItalic.otf") format("opentype");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "AeonikTrail";
+  font-weight: 300;
+  src: url("./AeonikTRIAL-Light.otf") format("opentype");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "AeonikTrail";
+  font-weight: 300;
+  font-style: italic;
+  src: url("./AeonikTRIAL-LightItalic.otf") format("opentype");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "AeonikTrail";
+  font-weight: 400;
+  src: url("./AeonikTRIAL-Regular.otf") format("opentype");
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "AeonikTrail";
+  font-weight: 400;
+  font-style: italic;
+  src: url("./AeonikTRIAL-RegularItalic.otf") format("opentype");
+  font-display: optional;
+}
