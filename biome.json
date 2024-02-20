@@ -5,8 +5,7 @@
   },
   "files": {
     "ignore": [
-      "./src/api/codegen/**/*",
-      "./src/data/countries.json",
+      "./src/libs/api/codegen/**/*",
       "./src/routeTree.gen.ts"
     ]
   },
@@ -19,7 +18,7 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["./src/api/codegen/**/*"],
+    "ignore": ["./src/libs/api/codegen/**/*"],
     "rules": {
       "recommended": true,
       "suspicious": {

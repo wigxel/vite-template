@@ -2,6 +2,12 @@
 
 This is the source for the WalletOS dashboard project.
 
+### Use as template
+
+```bash
+npx giget@latest gh:wigxel/vite-template
+```
+
 ### Tools
 
 - [Vite](https://https://vitejs.dev/) - Development Framework
