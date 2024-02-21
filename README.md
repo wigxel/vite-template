@@ -1,6 +1,4 @@
-# Getting Started
-
-This is the source for the WalletOS dashboard project.
+# Wigxel Official Vite Template
 
 ### Use as template
 
