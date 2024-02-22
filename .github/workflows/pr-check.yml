@@ -1,4 +1,4 @@
-name: PR CHECK
+name: Lint & Build
 
 on:
   pull_request:
@@ -8,13 +8,14 @@ on:
       - master
 
 jobs:
-  ci:
+  build:
     permissions: write-all
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version:
           - 18.x
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3.5.3
@@ -24,15 +25,36 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - uses: szenius/set-timezone@v1.2
+        with:
+          timezoneLinux: "Africa/Lagos"
+          timezoneMacos: "Africa/Lagos"
+          timezoneWindows: "West Africa Standard Time"
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
-        run: |
-          npm cache clean --force
-          npm ci
+        run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: |
-          npm run lint
-
-      - name: Build
-        run: |
-          npm run build
+      - name: Run lint
+        run: pnpm run lint
+        
+      - name: Run build
+        run: pnpm run build
