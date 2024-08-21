@@ -12,6 +12,5 @@ export function App() {
 
 const router = createRouter({
   routeTree,
-  globalNotFound: () => <div>Page not found</div>,
   defaultPreload: "intent",
 });

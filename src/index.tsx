@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./App";
-import "./assets/fonts/fonts.css";
+import "unfonts.css";
 import "./global.css";
 
 const root = ReactDOM.createRoot(

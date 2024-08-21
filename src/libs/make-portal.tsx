@@ -9,7 +9,6 @@ export const makePortal = (id: string) => {
     const { children, ...PROPS } = props;
 
     return (
-      // @ts-expect-error
       <RadixSlot {...PROPS} id={id}>
         {children}
       </RadixSlot>

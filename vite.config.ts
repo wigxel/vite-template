@@ -4,11 +4,12 @@ import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 import { TanStackRouterVite } from "@tanstack/router-vite-plugin";
 import react from "@vitejs/plugin-react-swc";
+import fontConfig from "./config/fonts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "./src/",
-  plugins: [react(), svgr(), TanStackRouterVite()],
+  plugins: [react(), svgr(), TanStackRouterVite(), fontConfig],
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "./src"),

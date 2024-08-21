@@ -4,10 +4,7 @@
     "enabled": true
   },
   "files": {
-    "ignore": [
-      "./src/libs/api/codegen/**/*",
-      "./src/routeTree.gen.ts"
-    ]
+    "ignore": ["./src/libs/api/codegen/**/*", "./src/routeTree.gen.ts"]
   },
   "formatter": {
     "enabled": true,
